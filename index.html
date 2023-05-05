@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="style.css" />
+    <title>password-generator</title>
+  </head>
+  <body>
+    <section class="main-container">
+      <div class="password-generator-box">
+        <div class="heading-text">
+          <h2>password generator</h2>
+        </div>
+        <div class="generated-password">
+          <div class="password">
+            <h2>djsfjs</h2>
+          </div>
+          <div class="copy-image">
+            <img src="./images/icon-copy.svg" />
+          </div>
+        </div>
+
+        <div class="password-body">
+          <div class="character-length">
+            <h3>character length</h3>
+            <span>10</span>
+          </div>
+          <div class="range-container">
+            <input type="range" min="1" max="100" value="50" id="range" />
+          </div>
+
+          <form action="">
+            <div class="checkbox-container">
+              <div class="check1">
+                <input type="checkbox" id="option1" name="uppercase" />
+                <label for="option1">Include Uppercase Letters</label>
+              </div>
+              <div class="check1">
+                <input type="checkbox" id="option2" name="lowercase" />
+                <label for="option2">Include Lowercase Letters</label>
+              </div>
+              <div class="check1">
+                <input type="checkbox" id="option3" name="numbers" />
+                <label for="option3">Include Numbers</label>
+              </div>
+              <div class="check1">
+                <input type="checkbox" id="option4" name="symbols" />
+                <label for="option4">Include Symbols</label>
+              </div>
+            </div>
+          </form>
+          <div class="strength-box">
+            <span>strength</span>
+            <h2>medium</h2>
+          </div>
+          <div class="generate-button">
+            <button>Generate</button>
+            <img src="./images/icon-arrow-right.svg" />
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

@@ -1,0 +1,146 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: aliceblue;
+  font-family: "JetBrains Mono-bold";
+}
+@font-face {
+  font-family: "JetBrains Mono";
+  src: url("./fonts/JetBrainsMono-Regular.woff2") format("woff2"),
+    url("./fonts/JetBrainsMono-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "JetBrains Mono-bold";
+  src: url("./fonts/JetBrainsMono-Bold.woff2") format("woff2"),
+    url("./fonts/JetBrainsMono-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+.main-container {
+  background-color: #18171f;
+  min-height: 100vh;
+}
+.password-generator-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 0;
+  .heading-text {
+    h2 {
+      color: #817d92;
+      text-transform: capitalize;
+      font-size: 24px;
+    }
+  }
+}
+.generated-password {
+  max-width: 540px;
+  width: 100%;
+  margin-top: 31px;
+  background-color: #24232c;
+  display: flex;
+  padding: 19px 32px;
+  justify-content: space-between;
+  .copy-image {
+    width: 21px;
+    height: 24px;
+    object-fit: contain;
+  }
+}
+.password-body {
+  max-width: 540px;
+  width: 100%;
+  background-color: #24232c;
+  margin-top: 30px;
+  padding: 34px 32px 0;
+}
+.character-length {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h3 {
+    font-size: 18px;
+    color: #e6e5ea;
+  }
+  span {
+    font-size: 32px;
+    color: #a4ffaf;
+  }
+}
+
+#range {
+  margin: 30px 0 42px;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: 0.2s;
+  transition: opacity 0.2s;
+}
+
+#range:hover {
+  opacity: 1;
+}
+
+#range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #04aa6d;
+  cursor: pointer;
+}
+
+#range::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #04aa6d;
+  cursor: pointer;
+}
+.checkbox-container {
+  .check1 {
+    padding: 8px 0;
+  }
+}
+
+.strength-box {
+  max-width: 476px;
+  width: 100%;
+  background-color: #18171f;
+  padding: 10px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 13px;
+}
+.generate-button {
+  margin: 32px 0;
+  position: relative;
+  button {
+    max-width: 476px;
+    width: 100%;
+    height: 65px;
+    background-color: #a4ffaf;
+    color: #24232c;
+    outline: none;
+    border-style: none;
+  }
+  img {
+    width: 11px;
+    height: 11px;
+    object-fit: contain;
+    position: absolute;
+    z-index: 1;
+    right: 20%;
+    bottom: 26px;
+    transform: translateX(-90px);
+  }
+}
