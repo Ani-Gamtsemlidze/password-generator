@@ -108,16 +108,29 @@
 .checkbox-container .check1 {
   padding: 8px 0;
 }
+.checkbox-container .check1 label {
+  font-size: 18px;
+  color: #e6e5ea;
+}
 
 .strength-box {
   max-width: 476px;
   width: 100%;
   background-color: #18171f;
-  padding: 10px 32px;
+  padding: 20px 32px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 13px;
+  margin-top: 30px;
+  text-transform: uppercase;
+}
+.strength-box span {
+  font-size: 18px;
+  color: #817d92;
+}
+.strength-box h2 {
+  font-size: 24px;
+  color: #e6e5ea;
 }
 
 .generate-button {
@@ -130,6 +143,10 @@
   height: 65px;
   background-color: #a4ffaf;
   color: #24232c;
+  font-size: 18px;
+  color: #24232c;
+  line-height: 24px;
+  text-transform: uppercase;
   outline: none;
   border-style: none;
 }
@@ -140,7 +157,7 @@
      object-fit: contain;
   position: absolute;
   z-index: 1;
-  right: 20%;
+  right: 17%;
   bottom: 26px;
   transform: translateX(-90px);
 }/*# sourceMappingURL=style.css.map */
