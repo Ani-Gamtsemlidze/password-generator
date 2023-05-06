@@ -108,6 +108,11 @@
 .checkbox-container {
   .check1 {
     padding: 8px 0;
+    input {
+      accent-color: #a4ffaf;
+      cursor: pointer;
+    }
+
     label {
       font-size: 18px;
       color: #e6e5ea;
@@ -137,6 +142,14 @@
 .generate-button {
   margin: 32px 0;
   position: relative;
+  &:active button {
+    background-color: unset;
+    border: #a4ffaf 2px solid;
+    color: #a4ffaf;
+  }
+  &:active path {
+    fill: #a4ffaf;
+  }
   button {
     max-width: 476px;
     width: 100%;
@@ -149,11 +162,9 @@
     text-transform: uppercase;
     outline: none;
     border-style: none;
+    cursor: pointer;
   }
-  img {
-    width: 11px;
-    height: 11px;
-    object-fit: contain;
+  svg {
     position: absolute;
     z-index: 1;
     right: 17%;

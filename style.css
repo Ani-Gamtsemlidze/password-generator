@@ -108,6 +108,10 @@
 .checkbox-container .check1 {
   padding: 8px 0;
 }
+.checkbox-container .check1 input {
+  accent-color: #a4ffaf;
+  cursor: pointer;
+}
 .checkbox-container .check1 label {
   font-size: 18px;
   color: #e6e5ea;
@@ -137,6 +141,14 @@
   margin: 32px 0;
   position: relative;
 }
+.generate-button:active button {
+  background-color: unset;
+  border: #a4ffaf 2px solid;
+  color: #a4ffaf;
+}
+.generate-button:active path {
+  fill: #a4ffaf;
+}
 .generate-button button {
   max-width: 476px;
   width: 100%;
@@ -149,12 +161,9 @@
   text-transform: uppercase;
   outline: none;
   border-style: none;
+  cursor: pointer;
 }
-.generate-button img {
-  width: 11px;
-  height: 11px;
-  -o-object-fit: contain;
-     object-fit: contain;
+.generate-button svg {
   position: absolute;
   z-index: 1;
   right: 17%;
