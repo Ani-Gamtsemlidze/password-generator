@@ -48,6 +48,13 @@
   display: flex;
   padding: 19px 32px;
   justify-content: space-between;
+  #password {
+    background: none;
+    border: none;
+    text-decoration: none;
+    outline: none;
+    font-size: 32px;
+  }
   .copy-image {
     width: 21px;
     height: 24px;

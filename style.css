@@ -46,6 +46,13 @@
   padding: 19px 32px;
   justify-content: space-between;
 }
+.generated-password #password {
+  background: none;
+  border: none;
+  text-decoration: none;
+  outline: none;
+  font-size: 32px;
+}
 .generated-password .copy-image {
   width: 21px;
   height: 24px;

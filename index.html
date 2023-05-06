@@ -13,14 +13,20 @@
         <div class="heading-text">
           <h2>password generator</h2>
         </div>
-        <div class="generated-password">
-          <div class="password">
-            <h2>PTx1f5DaFX</h2>
-          </div>
+        <form action="" class="generated-password">
+          <input
+            spellcheck="false"
+            type="text"
+            id="password"
+            name="fname"
+            value="PTx1f5DaFX"
+            autocomplete="off"
+            readonly
+          />
           <div class="copy-image">
             <img src="./images/icon-copy.svg" />
           </div>
-        </div>
+        </form>
 
         <div class="password-body">
           <div class="character-length">
@@ -29,21 +35,21 @@
           </div>
 
           <div class="range-container">
-            <input type="range" min="1" max="50" value="12" id="range" />
+            <input type="range" min="1" max="50" value="10" id="range" />
           </div>
 
           <form action="">
             <div class="checkbox-container">
               <div class="check1">
-                <input type="checkbox" id="option1" name="uppercase" />
+                <input type="checkbox" id="option1" name="uppercase" checked />
                 <label for="option1">Include Uppercase Letters</label>
               </div>
               <div class="check1">
-                <input type="checkbox" id="option2" name="lowercase" />
+                <input type="checkbox" id="option2" name="lowercase" checked />
                 <label for="option2">Include Lowercase Letters</label>
               </div>
               <div class="check1">
-                <input type="checkbox" id="option3" name="numbers" />
+                <input type="checkbox" id="option3" name="numbers" checked />
                 <label for="option3">Include Numbers</label>
               </div>
               <div class="check1">
