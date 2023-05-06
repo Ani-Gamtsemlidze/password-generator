@@ -45,6 +45,7 @@
   display: flex;
   padding: 19px 32px;
   justify-content: space-between;
+  align-items: center;
 }
 .generated-password #password {
   background: none;
@@ -52,6 +53,7 @@
   text-decoration: none;
   outline: none;
   font-size: 32px;
+  width: 100%;
 }
 .generated-password .copy-image {
   width: 21px;
@@ -176,4 +178,10 @@
   right: 17%;
   bottom: 26px;
   transform: translateX(-90px);
+}
+
+@media only screen and (max-width: 992px) {
+  .generate-button svg {
+    right: 0;
+  }
 }/*# sourceMappingURL=style.css.map */
