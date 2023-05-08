@@ -8,14 +8,16 @@
 
 @font-face {
   font-family: "JetBrains Mono";
-  src: url("./fonts/JetBrainsMono-Regular.woff2") format("woff2"), url("./fonts/JetBrainsMono-Regular.woff") format("woff");
+  src: url("./fonts/JetBrainsMono-Regular.woff2") format("woff2"),
+    url("./fonts/JetBrainsMono-Regular.woff") format("woff");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 @font-face {
   font-family: "JetBrains Mono-bold";
-  src: url("./fonts/JetBrainsMono-Bold.woff2") format("woff2"), url("./fonts/JetBrainsMono-Bold.woff") format("woff");
+  src: url("./fonts/JetBrainsMono-Bold.woff2") format("woff2"),
+    url("./fonts/JetBrainsMono-Bold.woff") format("woff");
   font-weight: bold;
   font-style: normal;
   font-display: swap;
@@ -54,12 +56,29 @@
   outline: none;
   font-size: 32px;
   width: 100%;
+  max-width: 340px;
 }
 .generated-password .copy-image {
   width: 21px;
   height: 24px;
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
+  cursor: pointer;
+  position: relative;
+}
+/* .copy-image :active .path {
+  fill: #fff;
+} */
+.copied {
+  color: #a4ffaf;
+  font-size: 18px;
+  line-height: 24px;
+  text-transform: uppercase;
+  position: absolute;
+  top: 2px;
+  right: 30px;
+  transform: translateX(-10px);
+  display: none;
 }
 
 .password-body {
@@ -184,4 +203,4 @@
   .generate-button svg {
     right: 0;
   }
-}/*# sourceMappingURL=style.css.map */
+} /*# sourceMappingURL=style.css.map */

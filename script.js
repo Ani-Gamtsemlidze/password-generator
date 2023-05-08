@@ -1,7 +1,10 @@
-"strict mode";
+"use strict";
 
 const strength = document.querySelector(".medium");
 const passwordLength = document.querySelector(".password-length");
+const copy = document.querySelector(".copy-image");
+
+const checkBox = document.querySelector(".checkbox-container");
 
 const optionUppercase = document.querySelector("#option1");
 const optionLowercase = document.querySelector("#option2");
@@ -78,8 +81,16 @@ function generateSymbols(length) {
   return symbols;
 }
 
+let mixedArray = [];
+mixedArray.push(optionUppercase);
+mixedArray.push(optionLowercase);
+mixedArray.push(optionNumber);
+mixedArray.push(optionSymbol);
+console.log(mixedArray);
+
 button.addEventListener("click", function () {
-  let mixedMeanings = "";
+  document.querySelector(".copied").style.display = "none";
+  document.querySelector(".path").setAttribute("fill", "#a4ffaf");
   if (optionUppercase.checked) {
     passwordContent.value = generateRandomUppercase(passwordLength.textContent);
   } else if (optionLowercase.checked) {
@@ -89,4 +100,15 @@ button.addEventListener("click", function () {
   } else if (optionSymbol.checked) {
     passwordContent.value = generateSymbols(passwordLength.textContent);
   }
+});
+
+copy.addEventListener("click", function () {
+  const password = passwordContent.value;
+  navigator.clipboard.writeText(password).then(() => {
+    document.querySelector(".path").setAttribute("fill", "#fff");
+    document.querySelector(".copied").style.display = "block";
+    // if (!passwordContent.value) {
+    //   document.querySelector(".copied").textContent = "empty";
+    // }
+  });
 });
