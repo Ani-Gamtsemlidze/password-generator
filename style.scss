@@ -56,11 +56,25 @@
     outline: none;
     font-size: 32px;
     width: 100%;
+    max-width: 360px;
   }
   .copy-image {
     width: 21px;
     height: 24px;
     object-fit: contain;
+    cursor: pointer;
+    position: relative;
+    .copied {
+      color: #a4ffaf;
+      font-size: 18px;
+      line-height: 24px;
+      text-transform: uppercase;
+      position: absolute;
+      top: 2px;
+      right: 30px;
+      transform: translateX(-10px);
+      display: none;
+    }
   }
 }
 .password-body {
@@ -88,32 +102,44 @@
   margin: 30px 0 42px;
   width: 100%;
   height: 25px;
-  background: #d3d3d3;
-  outline: none;
-  opacity: 0.7;
+  background: #18171f;
+  opacity: 1;
   -webkit-transition: 0.2s;
   transition: opacity 0.2s;
 }
 
-#range:hover {
-  opacity: 1;
-}
-
-#range::-webkit-slider-thumb {
+input[type="range"] {
   -webkit-appearance: none;
-  appearance: none;
-  width: 25px;
-  height: 25px;
-  background: #04aa6d;
+  width: 100%;
+  height: 10px;
+  border-radius: 5px;
+  background: #ddd;
+  outline: none;
+  padding: 0;
+  margin: 0;
+}
+
+input[type="range"]:focus {
+  outline: none;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #a4ffaf;
   cursor: pointer;
 }
 
-#range::-moz-range-thumb {
-  width: 25px;
-  height: 25px;
-  background: #04aa6d;
+input[type="range"]::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #007bff;
   cursor: pointer;
 }
+
 .checkbox-container {
   .check1 {
     padding: 8px 0;
@@ -143,14 +169,33 @@
     font-size: 18px;
     color: #817d92;
   }
-  h2 {
-    font-size: 24px;
-    color: #e6e5ea;
+  .strength-text {
+    margin-left: 26%;
+    h2 {
+      font-size: 24px;
+      color: #e6e5ea;
+    }
+  }
+}
+.scale-box {
+  display: flex;
+  .strength {
+    margin: 0 5px;
+    width: 10px;
+    height: 28px;
+    border: 2px solid #fff;
   }
 }
 .generate-button {
   margin: 32px 0;
   position: relative;
+  svg {
+    position: absolute;
+    z-index: 1;
+    right: 17%;
+    bottom: 26px;
+    transform: translateX(-90px);
+  }
   &:active button {
     background-color: unset;
     border: #a4ffaf 2px solid;
@@ -172,13 +217,6 @@
     outline: none;
     border-style: none;
     cursor: pointer;
-  }
-  svg {
-    position: absolute;
-    z-index: 1;
-    right: 17%;
-    bottom: 26px;
-    transform: translateX(-90px);
   }
 }
 

@@ -17,20 +17,44 @@ const generateButton = document.querySelector("#button");
 
 const range = document.querySelector("#range");
 
-const passwordStrength = document.querySelector(".medium");
-
 passwordLength.textContent = range.value;
 
+const passwordStrength = document.querySelector(".medium");
+
+const scale1Strength = document.querySelector(".scale1");
+const scale2Strength = document.querySelector(".scale2");
+const scale3Strength = document.querySelector(".scale3");
+const scale4Strength = document.querySelector(".scale4");
+scale1Strength.style.backgroundColor = "#F8CD65";
+scale2Strength.style.backgroundColor = "#F8CD65";
+scale3Strength.style.backgroundColor = "#F8CD65";
+scale4Strength.style.backgroundColor = "unset";
 range.addEventListener("input", (event) => {
   passwordLength.textContent = event.target.value;
   if (range.value >= 1 && range.value <= 4) {
     passwordStrength.textContent = "TOO WEAK!";
+    scale1Strength.style.backgroundColor = "#F64A4A";
+    scale2Strength.style.backgroundColor = "unset";
+    scale3Strength.style.backgroundColor = "unset";
+    scale4Strength.style.backgroundColor = "unset";
   } else if (range.value >= 5 && range.value <= 10) {
     passwordStrength.textContent = "WEAK";
+    scale1Strength.style.backgroundColor = "#FB7C58";
+    scale2Strength.style.backgroundColor = "#FB7C58";
+    scale3Strength.style.backgroundColor = "unset";
+    scale4Strength.style.backgroundColor = "unset";
   } else if (range.value >= 10 && range.value <= 30) {
     passwordStrength.textContent = "MEDIUM";
+    scale1Strength.style.backgroundColor = "#F8CD65";
+    scale2Strength.style.backgroundColor = "#F8CD65";
+    scale3Strength.style.backgroundColor = "#F8CD65";
+    scale4Strength.style.backgroundColor = "unset";
   } else {
     passwordStrength.textContent = "STRONG";
+    scale1Strength.style.backgroundColor = "#A4FFAF";
+    scale2Strength.style.backgroundColor = "#A4FFAF";
+    scale3Strength.style.backgroundColor = "#A4FFAF";
+    scale4Strength.style.backgroundColor = "#A4FFAF";
   }
 });
 
@@ -81,16 +105,17 @@ function generateSymbols(length) {
   return symbols;
 }
 
-let mixedArray = [];
-mixedArray.push(optionUppercase);
-mixedArray.push(optionLowercase);
-mixedArray.push(optionNumber);
-mixedArray.push(optionSymbol);
-console.log(mixedArray);
+// let mixedArray = [];
+// mixedArray.push(optionUppercase);
+// mixedArray.push(optionLowercase);
+// mixedArray.push(optionNumber);
+// mixedArray.push(optionSymbol);
+// console.log(mixedArray);
 
 button.addEventListener("click", function () {
   document.querySelector(".copied").style.display = "none";
   document.querySelector(".path").setAttribute("fill", "#a4ffaf");
+
   if (optionUppercase.checked) {
     passwordContent.value = generateRandomUppercase(passwordLength.textContent);
   } else if (optionLowercase.checked) {
