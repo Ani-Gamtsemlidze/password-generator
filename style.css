@@ -177,7 +177,8 @@ input[type=range]::-moz-range-thumb {
 .scale-box {
   display: flex;
   position: absolute;
-  right: 30%;
+  right: 33%;
+  transform: translateX(-10px);
 }
 .scale-box .strength {
   margin: 0 5px;
@@ -258,6 +259,7 @@ input[type=range]::-moz-range-thumb {
     margin: 16px 0;
   }
   .scale-box {
-    right: 11%;
+    right: 6%;
+    transform: translateX(-30px);
   }
 }/*# sourceMappingURL=style.css.map */
