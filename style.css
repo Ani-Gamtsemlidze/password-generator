@@ -167,7 +167,7 @@ input[type=range]::-moz-range-thumb {
   color: #817d92;
 }
 .strength-box .strength-text {
-  margin-left: 26%;
+  margin-right: 26%;
 }
 .strength-box .strength-text h2 {
   font-size: 24px;
@@ -176,6 +176,8 @@ input[type=range]::-moz-range-thumb {
 
 .scale-box {
   display: flex;
+  position: absolute;
+  right: 30%;
 }
 .scale-box .strength {
   margin: 0 5px;
@@ -192,21 +194,22 @@ input[type=range]::-moz-range-thumb {
   position: absolute;
   z-index: 1;
   right: 17%;
-  bottom: 26px;
+  bottom: 28px;
   transform: translateX(-90px);
 }
-.generate-button:active button {
+.generate-button:hover button {
   background-color: unset;
   border: #a4ffaf 2px solid;
   color: #a4ffaf;
 }
-.generate-button:active path {
+.generate-button:hover path {
   fill: #a4ffaf;
 }
 .generate-button button {
+  border: transparent 2px solid;
   max-width: 476px;
   width: 100%;
-  height: 65px;
+  padding: 20px 32px;
   background-color: #a4ffaf;
   color: #24232c;
   font-size: 18px;
@@ -214,12 +217,47 @@ input[type=range]::-moz-range-thumb {
   line-height: 24px;
   text-transform: uppercase;
   outline: none;
-  border-style: none;
   cursor: pointer;
 }
 
 @media only screen and (max-width: 992px) {
   .generate-button svg {
-    right: 0;
+    right: 5px;
+    transform: translateX(-71px);
+  }
+  .password-generator-box {
+    padding: 60px 12px;
+  }
+  .password-generator-box .heading-text h2 {
+    font-size: 16px;
+  }
+  .generated-password #password {
+    font-size: 24px;
+    width: 58%;
+  }
+  .password-body {
+    padding: 34px 18px 0;
+  }
+  .strength-box {
+    justify-content: unset;
+  }
+  .strength-box span {
+    font-size: 16px;
+    margin-left: -20px;
+  }
+  .strength-box .strength-text {
+    margin-left: 10%;
+  }
+  .strength-box .strength-text h2 {
+    font-size: 18px;
+  }
+  .checkbox-container .check1 label {
+    font-size: 16px;
+  }
+  .generate-button {
+    margin: 16px 0;
+  }
+  .scale-box {
+    right: 11%;
   }
 }/*# sourceMappingURL=style.css.map */
