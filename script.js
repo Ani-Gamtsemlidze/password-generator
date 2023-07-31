@@ -26,12 +26,28 @@ const scale2Strength = document.querySelector(".scale2");
 const scale3Strength = document.querySelector(".scale3");
 const scale4Strength = document.querySelector(".scale4");
 
-// scale1Strength.style.backgroundColor = "#F8CD65";
-// scale2Strength.style.backgroundColor = "#F8CD65";
-// scale3Strength.style.backgroundColor = "#F8CD65";
-// scale4Strength.style.backgroundColor = "unset";
-
 range.addEventListener("input", (event) => {
+  if (passwordStrength.textContent.includes("TOO WEAK!")) {
+    scale1Strength.style.backgroundColor = "#F64A4A";
+    scale2Strength.style.backgroundColor = "unset";
+    scale3Strength.style.backgroundColor = "unset";
+    scale4Strength.style.backgroundColor = "unset";
+  } else if (passwordStrength.textContent.includes("WEAK")) {
+    scale1Strength.style.backgroundColor = "#FB7C58";
+    scale2Strength.style.backgroundColor = "#FB7C58";
+    scale3Strength.style.backgroundColor = "unset";
+    scale4Strength.style.backgroundColor = "unset";
+  } else if (passwordStrength.textContent.includes("MEDIUM")) {
+    scale1Strength.style.backgroundColor = "#F8CD65";
+    scale2Strength.style.backgroundColor = "#F8CD65";
+    scale3Strength.style.backgroundColor = "#F8CD65";
+    scale4Strength.style.backgroundColor = "unset";
+  } else if (passwordStrength.textContent.includes("STRONG")) {
+    scale1Strength.style.backgroundColor = "#A4FFAF";
+    scale2Strength.style.backgroundColor = "#A4FFAF";
+    scale3Strength.style.backgroundColor = "#A4FFAF";
+    scale4Strength.style.backgroundColor = "#A4FFAF";
+  }
   passwordLength.textContent = event.target.value;
   if (range.value >= 1 && range.value <= 4) {
     passwordStrength.textContent = "TOO WEAK!";
@@ -43,9 +59,6 @@ range.addEventListener("input", (event) => {
     passwordStrength.textContent = "STRONG";
   }
 });
-
-// const uppercaseArray = Array.from(Array(26)).map((e, i) => i + 65);
-// const alphabet = uppercaseArray.map((x) => String.fromCharCode(x));
 
 const randomUppercaseChar = String.fromCharCode(
   65 + Math.floor(Math.random() * 26)
@@ -91,57 +104,56 @@ function generateSymbols(length) {
   return symbols;
 }
 
-// let mixedArray = [];
-// mixedArray.push(optionUppercase);
-// mixedArray.push(optionLowercase);
-// mixedArray.push(optionNumber);
-// mixedArray.push(optionSymbol);
-// console.log(mixedArray);
+let selectedOptions = [];
 
 button.addEventListener("click", function () {
   document.querySelector(".copied").style.display = "none";
   document.querySelector(".path").setAttribute("fill", "#a4ffaf");
 
-  if (passwordStrength.textContent.includes("TOO WEAK!")) {
-    scale1Strength.style.backgroundColor = "#F64A4A";
-    scale2Strength.style.backgroundColor = "unset";
-    scale3Strength.style.backgroundColor = "unset";
-    scale4Strength.style.backgroundColor = "unset";
-  } else if (passwordStrength.textContent.includes("WEAK")) {
-    scale1Strength.style.backgroundColor = "#FB7C58";
-    scale2Strength.style.backgroundColor = "#FB7C58";
-    scale3Strength.style.backgroundColor = "unset";
-    scale4Strength.style.backgroundColor = "unset";
-  } else if (passwordStrength.textContent.includes("MEDIUM")) {
-    scale1Strength.style.backgroundColor = "#F8CD65";
-    scale2Strength.style.backgroundColor = "#F8CD65";
-    scale3Strength.style.backgroundColor = "#F8CD65";
-    scale4Strength.style.backgroundColor = "unset";
-  } else if (passwordStrength.textContent.includes("STRONG")) {
-    scale1Strength.style.backgroundColor = "#A4FFAF";
-    scale2Strength.style.backgroundColor = "#A4FFAF";
-    scale3Strength.style.backgroundColor = "#A4FFAF";
-    scale4Strength.style.backgroundColor = "#A4FFAF";
+  if (optionUppercase.checked) {
+    selectedOptions.push("uppercase");
+    // passwordContent.value = generateRandomUppercase(passwordLength.textContent);
+  }
+  if (optionLowercase.checked) {
+    selectedOptions.push("lowercase");
+    // passwordContent.value = generateRandomLowercase(passwordLength.textContent);
+  }
+  if (optionNumber.checked) {
+    selectedOptions.push("number");
+
+    // passwordContent.value = generateNumber(passwordLength.textContent);
+  }
+  if (optionSymbol.checked) {
+    selectedOptions.push("symbol");
+
+    // passwordContent.value = generateSymbols(passwordLength.textContent);
   }
 
-  if (optionUppercase.checked) {
-    passwordContent.value = generateRandomUppercase(passwordLength.textContent);
-  } else if (optionLowercase.checked) {
-    passwordContent.value = generateRandomLowercase(passwordLength.textContent);
-  } else if (optionNumber.checked) {
-    passwordContent.value = generateNumber(passwordLength.textContent);
-  } else if (optionSymbol.checked) {
-    passwordContent.value = generateSymbols(passwordLength.textContent);
-  }
+  passwordContent.value = generateMixPassword(passwordLength.textContent);
 });
+
+function generateMixPassword(length) {
+  let mixPassword = "";
+  for (let i = 0; i < length; i++) {
+    const selectedOption =
+      selectedOptions[Math.floor(Math.random() * selectedOptions.length)];
+    if (selectedOption === "uppercase") {
+      mixPassword += generateRandomUppercase(1);
+    } else if (selectedOption === "lowercase") {
+      mixPassword += generateRandomLowercase(1);
+    } else if (selectedOption === "number") {
+      mixPassword += generateNumber(1);
+    } else if (selectedOption === "symbol") {
+      mixPassword += generateSymbols(1);
+    }
+  }
+  return mixPassword;
+}
 
 copy.addEventListener("click", function () {
   const password = passwordContent.value;
   navigator.clipboard.writeText(password).then(() => {
     document.querySelector(".path").setAttribute("fill", "#fff");
     document.querySelector(".copied").style.display = "block";
-    // if (!passwordContent.value) {
-    //   document.querySelector(".copied").textContent = "empty";
-    // }
   });
 });
