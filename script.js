@@ -118,22 +118,27 @@ function generateSymbols(length) {
 
 let selectedOptions = [];
 
-button.addEventListener("click", function () {
+generateButton.addEventListener("click", function () {
+  selectedOptions = [];
+
   if (optionUppercase.checked) {
     selectedOptions.push("uppercase");
     // passwordContent.value = generateRandomUppercase(passwordLength.textContent);
   }
   if (optionLowercase.checked) {
     selectedOptions.push("lowercase");
+    console.log(selectedOptions);
     // passwordContent.value = generateRandomLowercase(passwordLength.textContent);
   }
   if (optionNumber.checked) {
     selectedOptions.push("number");
+    console.log(selectedOptions);
 
     // passwordContent.value = generateNumber(passwordLength.textContent);
   }
   if (optionSymbol.checked) {
     selectedOptions.push("symbol");
+    console.log(selectedOptions);
 
     // passwordContent.value = generateSymbols(passwordLength.textContent);
   }
@@ -148,14 +153,18 @@ function generateMixPassword(length) {
       selectedOptions[Math.floor(Math.random() * selectedOptions.length)];
     if (selectedOption === "uppercase") {
       mixPassword += generateRandomUppercase(1);
-    } else if (selectedOption === "lowercase") {
+    }
+    if (selectedOption === "lowercase") {
       mixPassword += generateRandomLowercase(1);
-    } else if (selectedOption === "number") {
+    }
+    if (selectedOption === "number") {
       mixPassword += generateNumber(1);
-    } else if (selectedOption === "symbol") {
+    }
+    if (selectedOption === "symbol") {
       mixPassword += generateSymbols(1);
     }
   }
+  console.log(mixPassword);
   return mixPassword;
 }
 
